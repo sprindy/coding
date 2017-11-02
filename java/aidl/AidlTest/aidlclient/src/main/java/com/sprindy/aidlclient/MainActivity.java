@@ -7,15 +7,19 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.renderscript.ScriptGroup;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.sprindy.aidltest.ISprindyAidl;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public String TAG = "SPRINDY";
+    public String TAG = "SPRINDY_AIDL";
 
     private EditText mEtNum1;
     private EditText mEtNum2;
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
+            Log.d(TAG, "onServiceDisconnected: ");
             iSprindyAidl = null;
         }
     };
@@ -68,15 +73,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-//        int num1 = Integer.parseInt(mEtNum1.getText().toString());
-//        int num2 = Integer.parseInt(mEtNum2.getText().toString());
-        int num1 = 0;
-        int num2 = 0;
+        int num1 = Integer.parseInt(mEtNum1.getText().toString());
+        int num2 = Integer.parseInt(mEtNum2.getText().toString());
+//        int num1 = 0;
+//        int num2 = 0;
 //        int sum = num1 + num2;
 
         //TODO
         if (iSprindyAidl == null) {
             Log.e(TAG, "onClick: iSprindyAidl = null!!!");
+            Toast.makeText(this, "iSprindyAidl = null!!!", Toast.LENGTH_SHORT).show();
             return;
         }
         int sum = 0;

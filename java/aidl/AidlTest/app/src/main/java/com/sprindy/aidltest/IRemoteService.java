@@ -6,13 +6,13 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
-import static android.content.ContentValues.TAG;
-
 /**
  * Created by sprindy on 11/1/17.
  */
 
 public class IRemoteService extends Service {
+
+    public String TAG = "SPRINDY_AIDL";
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -22,7 +22,7 @@ public class IRemoteService extends Service {
     private IBinder iBinder = new ISprindyAidl.Stub(){
         @Override
         public int add(int num1, int num2) throws RemoteException {
-            Log.d(TAG, "add: AIDL add + nums: " + num1 +" " + num2);
+            Log.d(TAG, "add: AIDL add nums: " + num1 +" + " + num2);
             return num1 + num2;
         }
     };

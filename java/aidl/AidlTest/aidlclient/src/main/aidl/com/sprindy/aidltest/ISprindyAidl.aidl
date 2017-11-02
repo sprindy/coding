@@ -1,5 +1,5 @@
 // ISprindyAidl.aidl
-package com.sprindy.aidlclient;
+package com.sprindy.aidltest;
 
 // Declare any non-default types here with import statements
 
