@@ -1,0 +1,23 @@
+apply plugin: 'com.android.application'
+apply from: "$projectDir/build_sdk.gradle"
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        applicationId "com.sprindy.samples.hello"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+}
+
+dependencies {
+    compile 'org.jetbrains:annotations-java5:15.0'
+    compile 'com.intellij:annotations:+@jar'
+//    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+//    compile 'com.android.support:support-v4:26.+'
+}

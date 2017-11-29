@@ -1,0 +1,6 @@
+app/build/*
+build/*
+.gradle/*
+.idea/*
+app/.externalNativeBuild/ndkBuild/*
+.gradle/3.3/*
